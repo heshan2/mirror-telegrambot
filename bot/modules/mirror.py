@@ -130,7 +130,7 @@ class MirrorListener(listeners.MirrorListeners):
             uname = f"@{self.message.from_user.username}"
         else:
             uname = f'<a href="tg://user?id={self.message.from_user.id}">{self.message.from_user.first_name}</a>'
-        msg = f"{uname} your download has been stopped due to: {error}"
+        msg = f"{uname} <b>Your Download Has Been Stopped Because :</b>\n\n<b>{error}</b>"
         sendMessage(msg, self.bot, self.update)
         if count == 0:
             self.clean()
