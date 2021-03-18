@@ -49,7 +49,7 @@ def _watch(bot: Bot, update, isTar=False):
     listener = MirrorListener(bot, update, pswd, isTar, tag)
     ydl = YoutubeDLHelper(listener)
     threading.Thread(target=ydl.add_download,args=(link, f'{DOWNLOAD_DIR}{listener.uid}', qual, name)).start()
-    sendStatusMessage(f"<b>★Your YTDL Link Has Been Added To Download Queue.\n☆ Obey Rules On Pinned Message To Avoid Being Banned.\n★ Check Status To See Current Progress</b> /{BotCommands.StatusCommand}", bot, update)
+    sendMessage(f"<b>★Your YTDL Link Has Been Added To Download Queue.\n☆ Obey Rules On Pinned Message To Avoid Being Banned.\n★ Check Status To See Current Progress</b> /{BotCommands.StatusCommand}", bot, update)
     if len(Interval) == 0:
         Interval.append(setInterval(DOWNLOAD_STATUS_UPDATE_INTERVAL, update_all_messages))
 
