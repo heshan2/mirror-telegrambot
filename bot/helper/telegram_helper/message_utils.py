@@ -104,8 +104,8 @@ def update_all_messages():
 
 def sendStatusMessage(msg, bot):
     progress = get_readable_message()
-    progress += f"<b>CPU:</b> {psutil.cpu_percent()}%\n" \
-           f"<b>RAM:</b> {psutil.virtual_memory().percent}%\n" \
+    progress += f"<b>CPU:</b> {psutil.cpu_percent()}%" \
+           f"<b>RAM:</b> {psutil.virtual_memory().percent}%" \
            f"<b>DISK:</b> {psutil.disk_usage('/').percent}%\n"
     with download_dict_lock:
         dlspeed_bytes = 0
