@@ -35,8 +35,8 @@ def stats(update, context):
             f'<b>Free:</b> {free}\n\n' \
             f'📊Data Usage📊\n<b>Upload:</b> {sent}\n' \
             f'<b>Down:</b> {recv}\n\n' \
-            f'<b>CPU:</b> {cpuUsage}%\n' \
-            f'<b>RAM:</b> {memory}%\n' \
+            f'<b>CPU:</b> {cpuUsage}% ' \
+            f'<b>RAM:</b> {memory}% ' \
             f'<b>Disk:</b> {disk}%'
     sendMessage(stats, context.bot, update)
 
@@ -125,15 +125,15 @@ def main():
         remove('restart.pickle')
 
     start_handler = CommandHandler(BotCommands.StartCommand, start,
-                                   filters=CustomFilters.authorized_chat | CustomFilters.authorized_user)
+                                   filters=CustomFilters.authorized_user)
     ping_handler = CommandHandler(BotCommands.PingCommand, ping,
                                   filters=CustomFilters.authorized_chat | CustomFilters.authorized_user)
     restart_handler = CommandHandler(BotCommands.RestartCommand, restart,
-                                     filters=CustomFilters.owner_filter)
+                                     filters=CustomFilters.authorized_user | filters=CustomFilters.owner_filter)
     help_handler = CommandHandler(BotCommands.HelpCommand,
                                   bot_help, filters=CustomFilters.authorized_chat | CustomFilters.authorized_user)
     stats_handler = CommandHandler(BotCommands.StatsCommand,
-                                   stats, filters=CustomFilters.authorized_chat | CustomFilters.authorized_user)
+                                   stats, filters=CustomFilters.authorized_user)
     log_handler = CommandHandler(BotCommands.LogCommand, log, filters=CustomFilters.owner_filter)
     dispatcher.add_handler(start_handler)
     dispatcher.add_handler(ping_handler)
