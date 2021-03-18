@@ -31,13 +31,13 @@ def stats(update, context):
     disk = psutil.disk_usage('/').percent
     stats = f'<b>Bot Uptime:</b> {currentTime}\n' \
             f'<b>Total disk space:</b> {total}\n' \
-            f'<b>Used:</b> {used}  ' \
-            f'<b>Free:</b> {free}\n\n' \
-            f'📊Data Usage📊\n<b>Upload:</b> {sent}\n' \
-            f'<b>Down:</b> {recv}\n\n' \
-            f'<b>CPU:</b> {cpuUsage}% ' \
-            f'<b>RAM:</b> {memory}% ' \
-            f'<b>Disk:</b> {disk}%'
+            f'<b>USED :</b> {used}  ' \
+            f'<b>FREE :</b> {free}\n\n' \
+            f'📊Data Usage📊\n<b>UP :</b> {sent}\n' \
+            f'<b>DOWN :</b> {recv}\n\n' \
+            f'<b>CPU :</b> {cpuUsage}% ' \
+            f'<b>RAM :</b> {memory}% ' \
+            f'<b>DISK :</b> {disk}%'
     sendMessage(stats, context.bot, update)
 
 
@@ -129,7 +129,7 @@ def main():
     ping_handler = CommandHandler(BotCommands.PingCommand, ping,
                                   filters=CustomFilters.authorized_chat | CustomFilters.authorized_user)
     restart_handler = CommandHandler(BotCommands.RestartCommand, restart,
-                                     filters=CustomFilters.authorized_user | filters=CustomFilters.owner_filter)
+                                     filters=CustomFilters.authorized_user | CustomFilters.owner_filter)
     help_handler = CommandHandler(BotCommands.HelpCommand,
                                   bot_help, filters=CustomFilters.authorized_chat | CustomFilters.authorized_user)
     stats_handler = CommandHandler(BotCommands.StatsCommand,
