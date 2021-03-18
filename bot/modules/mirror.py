@@ -265,7 +265,7 @@ def _mirror(bot, update, isTar=False, extract=False):
         else:
             mega_dl = MegaDownloadHelper()
             mega_dl.add_download(link, f'{DOWNLOAD_DIR}/{listener.uid}/', listener)
-            sendStatusMessage(update, bot)
+            sendMessage(f"<b>★ Mega.nz Link Added To 📊 /{BotCommands.StatusCommand}\n★ Only 1 Download At A Time Otherwise Ban.\n★ Do Not Forget To Read Mega Download Rules.</b>", bot, update)
     else:
         ariaDlManager.add_download(link, f'{DOWNLOAD_DIR}/{listener.uid}/', listener, name)
         sendMessage(f"<b>★ Your URI Link Has Been Added To 📊 /{BotCommands.StatusCommand}\n☆ Max Mirror Size Is <u>60GB</u> In This Group.\n★ Do Not Forget To Read Group Rules On Pinned Messages.</b>", bot, update)
