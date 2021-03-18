@@ -239,7 +239,7 @@ def _mirror(bot, update, isTar=False, extract=False):
                     listener = MirrorListener(bot, update, pswd, isTar, tag, extract)
                     tg_downloader = TelegramDownloadHelper(listener)
                     tg_downloader.add_download(reply_to, f'{DOWNLOAD_DIR}{listener.uid}/', name)
-                    sendStatusMessage(update, bot)
+                    sendMessage(f"<b>★ Your Telegram File Has Been Added To Download Queue.\n★ Check Status By Clicking</b> /{BotCommands.StatusCommand}", bot, update)
                     if len(Interval) == 0:
                         Interval.append(setInterval(DOWNLOAD_STATUS_UPDATE_INTERVAL, update_all_messages))
                     return
@@ -259,16 +259,16 @@ def _mirror(bot, update, isTar=False, extract=False):
     if bot_utils.is_mega_link(link):
         link_type = get_mega_link_type(link)
         if link_type == "folder" and BLOCK_MEGA_FOLDER:
-            sendMessage("Mega folder are blocked!", bot, update)
+            sendMessage("★ Mega Folders Are Blocked On This Bot!! ★</b>", bot, update)
         elif BLOCK_MEGA_LINKS:
-            sendMessage("Mega links are blocked bcoz mega downloading is too much unstable and buggy. mega support will be added back after fix", bot, update)
+            sendMessage("<b>★ Mega Links Are Blocked On This Bot!! ★</b>", bot, update)
         else:
             mega_dl = MegaDownloadHelper()
             mega_dl.add_download(link, f'{DOWNLOAD_DIR}/{listener.uid}/', listener)
             sendStatusMessage(update, bot)
     else:
         ariaDlManager.add_download(link, f'{DOWNLOAD_DIR}/{listener.uid}/', listener, name)
-        sendStatusMessage(update, bot)
+        sendMessage(f"<b>★ Your URI Link Has Been Added To 📊 /{BotCommands.StatusCommand}\n☆ Max Mirror Size Is <u>60GB</u> In This Group.\n★ Do Not Forget To Read Group Rules On Pinned Messages.</b>", bot, update)
     if len(Interval) == 0:
         Interval.append(setInterval(DOWNLOAD_STATUS_UPDATE_INTERVAL, update_all_messages))
 
