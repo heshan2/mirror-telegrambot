@@ -47,6 +47,6 @@ def speed_convert(size):
 
 
 SPEED_HANDLER = CommandHandler(BotCommands.SpeedCommand, speedtest, 
-                                                  filters=CustomFilters.authorized_chat | CustomFilters.authorized_user)
+                                                  filters=CustomFilters.authorized_user)
 
 dispatcher.add_handler(SPEED_HANDLER)
