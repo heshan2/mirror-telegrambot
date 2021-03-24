@@ -105,7 +105,7 @@ def update_all_messages():
 
 def sendStatusMessage(msg, bot):
     progress = get_readable_message()
-    progress += f"<b>Bot Uptime :</b> get_readable_time((time.time() - botStartTime))\n\n" \
+    progress += f"<b>Bot Uptime :</b> {get_readable_time((time.time() - botStartTime))}\n\n" \
            f"<b>CPU :</b> {psutil.cpu_percent()}%" \
            f" <b>RAM :</b> {psutil.virtual_memory().percent}%" \
            f" <b>DISK :</b> {psutil.disk_usage('/').percent}%"
