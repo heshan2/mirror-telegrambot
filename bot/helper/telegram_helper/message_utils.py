@@ -3,9 +3,9 @@ from telegram.message import Message
 from telegram.update import Update
 import psutil
 import time
-from bot import AUTO_DELETE_MESSAGE_DURATION, LOGGER, bot, \
+from bot import AUTO_DELETE_MESSAGE_DURATION, LOGGER, botStartTime, bot, \
     status_reply_dict, status_reply_dict_lock, download_dict, download_dict_lock
-from bot.helper.ext_utils.bot_utils import get_readable_message, get_readable_file_size, MirrorStatus
+from bot.helper.ext_utils.bot_utils import get_readable_message, get_readable_file_size, get_readable_time, MirrorStatus
 from telegram.error import TimedOut, BadRequest
 
 
@@ -68,7 +68,7 @@ def delete_all_messages():
 
 def update_all_messages():
     msg = get_readable_message()
-    msg += f"<b>Bot Uptime :</b> {get_readable_time((time.time() - botStartTime))}\n\n" \
+    msg += f"<b>BOT UPTIME 🔺 :</b> <b>{get_readable_time((time.time() - botStartTime))}</b>\n\n" \
            f"<b>CPU :</b> {psutil.cpu_percent()}%" \
            f" <b>RAM :</b> {psutil.virtual_memory().percent}%" \
            f" <b>DISK :</b> {psutil.disk_usage('/').percent}%"
@@ -105,7 +105,7 @@ def update_all_messages():
 
 def sendStatusMessage(msg, bot):
     progress = get_readable_message()
-    progress += f"<b>Bot Uptime :</b> {get_readable_time((time.time() - botStartTime))}\n\n" \
+    progress += f"<b>BOT UPTIME 🔺 :</b> <b>{get_readable_time((time.time() - botStartTime))}</b>\n\n" \
            f"<b>CPU :</b> {psutil.cpu_percent()}%" \
            f" <b>RAM :</b> {psutil.virtual_memory().percent}%" \
            f" <b>DISK :</b> {psutil.disk_usage('/').percent}%"
