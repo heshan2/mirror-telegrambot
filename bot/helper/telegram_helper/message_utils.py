@@ -68,7 +68,8 @@ def delete_all_messages():
 
 def update_all_messages():
     msg = get_readable_message()
-    msg += f"<b>CPU :</b> {psutil.cpu_percent()}%" \
+    msg += f"<b>Bot Uptime :</b> get_readable_time((time.time() - botStartTime))\n\n" \
+           f"<b>CPU :</b> {psutil.cpu_percent()}%" \
            f" <b>RAM :</b> {psutil.virtual_memory().percent}%" \
            f" <b>DISK :</b> {psutil.disk_usage('/').percent}%"
     with download_dict_lock:
@@ -104,7 +105,8 @@ def update_all_messages():
 
 def sendStatusMessage(msg, bot):
     progress = get_readable_message()
-    progress += f"<b>CPU :</b> {psutil.cpu_percent()}%" \
+    progress += f"<b>Bot Uptime :</b> get_readable_time((time.time() - botStartTime))\n\n" \
+           f"<b>CPU :</b> {psutil.cpu_percent()}%" \
            f" <b>RAM :</b> {psutil.virtual_memory().percent}%" \
            f" <b>DISK :</b> {psutil.disk_usage('/').percent}%"
     with download_dict_lock:
