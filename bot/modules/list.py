@@ -27,5 +27,5 @@ def list_drive(update, context):
         #     threading.Thread(target=auto_delete_message, args=(context.bot, update.message, reply)).start()
 
 
-list_handler = CommandHandler(BotCommands.ListCommand, list_drive, filters=CustomFilters.authorized_chat | CustomFilters.authorized_user)
+list_handler = CommandHandler(BotCommands.ListCommand, list_drive, filters=CustomFilters.authorized_user)
 dispatcher.add_handler(list_handler)
