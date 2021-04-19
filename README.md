@@ -1,6 +1,6 @@
 [![Slam](https://telegra.ph/file/019996f816db9ed576cff.jpg)](https://t.me/request_ayush)
 
-owner of this repo :- [AYUSH](https://github.com/spe4641)
+owner of this repo :- [AYUSH](https://github.com/ayushteke)
 
 contact me :- [AYUSH](https://t.me/request_ayush)
 
