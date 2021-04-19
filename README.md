@@ -1,7 +1,19 @@
-[![Slam](https://telegra.ph/file/db03910496f06094f1f7a.jpg)](https://youtu.be/Pk_TthHfLeE)
+[![Slam](https://telegra.ph/file/019996f816db9ed576cff.jpg)](https://t.me/request_ayush)
+
+owner of this repo :- [AYUSH](https://github.com/spe4641)
+
+contact me :- [AYUSH](https://t.me/request_ayush)
 
 # Slam Mirror Bot
 This is a telegram bot writen in python for mirroring files on the internet to our beloved Google Drive.
+
+## Deploying on Heroku
+Give Star & Fork this repo, then upload **token.pickle** & **credentials.json** to your forks
+
+to know how to get them click on the  #[ link ](https://github.com/spe4641/test-new#getting-google-oauth-api-credential-file)
+
+after this click on the below button 👇👇👇👇
+<p><a href="https://heroku.com/deploy"> <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku" /></a></p>
 
 ## Features supported:
 <details>
@@ -148,22 +160,24 @@ Give Star & Fork this repo, then upload **token.pickle** to your forks
 
 ```
 mirror - Start Mirroring
-tarmirror - Upload tar (zipped) file
-unzipmirror - Extract files
+tar - Upload tar (zipped) file
+unzip - Extract files
 clone - copy file/folder to drive
 watch - mirror YT-DL support link
 tarwatch - mirror youtube playlist link as tar
 cancel - Cancel a task
-cancelall - Cancel all tasks
+cnlall - Cancel all tasks
 del - Delete file from Drive
 list - [query] searches files in G-Drive
 status - Get Mirror Status message
-stats - Bot Usage Stats
-help - Get Detailed Help
+stat - Bot Usage Stats
+hlp - Get Detailed Help
 speedtest - Check Speed of the host
 log - Bot Log [owner only]
 repo - Get the bot repo
 ```
+some of the commands are changed because the group members use them without any reason 
+
 
 ## Using service accounts for uploading to avoid user rate limit
 For Service Account to work, you must set **USE_SERVICE_ACCOUNTS="True"** in config file or environment variables
@@ -214,5 +228,6 @@ Thanks to:
 - [iamLiquidX](https://github.com/iamLiquidX/) for Speedtest module
 - [ydner](https://github.com/ydner/) for Usage module
 - [breakdowns](https://github.com/breakdowns) idk
+
 
 and many more people who aren't mentioned here, but may be found in [Contributors](https://github.com/breakdowns/slam-mirrorbot/graphs/contributors).
