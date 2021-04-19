@@ -148,11 +148,6 @@ sudo docker build . -t mirrorbot
 sudo docker run mirrorbot
 ```
 
-## Deploying on Heroku
-
-Give Star & Fork this repo, then upload **token.pickle** to your forks
-
-<p><a href="https://heroku.com/deploy"> <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku" /></a></p>
 
 ## Bot commands to be set in [@BotFather](https://t.me/BotFather)
 
