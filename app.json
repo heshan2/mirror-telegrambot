@@ -105,6 +105,7 @@
       },
       "STOP_DUPLICATE_MIRROR": {
         "description": "If this field is set to True, bot will check file in drive, if it is present in drive, downloading will be stopped.",
+        "value" : true,
         "required": false
       },
       "SHORTENER": {
