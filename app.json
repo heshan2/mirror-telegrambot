@@ -7,9 +7,9 @@
       "telegram",
       "python"
     ],
-    "repository": "https://github.com/breakdowns/slam-mirrorbot",
-    "website": "https://t.me/SlamMirrorSupportGroup",
-    "success_url": "https://github.com/breakdowns/slam-mirrorbot/blob/master/README.md",
+    "repository": "https://github.com/ayushteke/slam_aria_mirror_bot_HEROKU",
+    "website": "https://t.me/torrent_to_gdrive",
+    "success_url": "https://github.com/ayushteke/slam_aria_mirror_bot_HEROKU/blob/master/README.md",
     "stack": "container",
     "env": {
       "ENV": {
