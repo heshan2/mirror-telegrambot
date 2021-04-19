@@ -38,8 +38,8 @@ after this click on the below button 👇👇👇👇
 - Custom Filename (Only for url, telegram files and ytdl. Not for mega links and magnet/torrents)
 - Speedtest with picture results
 - Extracting password protected files and using custom filename see these examples:
-> https://telegra.ph/Magneto-Python-Aria---Custom-Filename-Examples-01-20
-- Extract these filetypes and uploads to google drive
+- https://telegra.ph/Magneto-Python-Aria---Custom-Filename-Examples-01-20
+- Bot can extract the following types of files
 ```
 ZIP, RAR, TAR, 7z, ISO, WIM, CAB, GZIP, BZIP2, 
 APM, ARJ, CHM, CPIO, CramFS, DEB, DMG, FAT, 
