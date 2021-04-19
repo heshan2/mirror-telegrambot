@@ -49,7 +49,7 @@ NTFS, RPM, SquashFS, UDF, VHD, XAR, Z.
 
 </details>
 
-## How to deploy?
+## How to deploy on vps ?
 Deploying is pretty much straight forward and is divided into several steps as follows:
 
 ## Installing requirements
@@ -133,7 +133,7 @@ pip install google-api-python-client google-auth-httplib2 google-auth-oauthlib
 python3 generate_drive_token.py
 ```
 
-## Deploying
+## Deploying on vps
 
 - Start docker daemon (skip if already running):
 ```
@@ -169,7 +169,7 @@ speedtest - Check Speed of the host
 log - Bot Log [owner only]
 repo - Get the bot repo
 ```
-some of the commands are changed because the group members use them without any reason 
+## some of the commands are changed because the group members use them without any reason 
 
 
 ## Using service accounts for uploading to avoid user rate limit
