@@ -16,8 +16,6 @@ after this click on the below button 👇👇👇👇
 <p><a href="https://heroku.com/deploy"> <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku" /></a></p>
 
 ## Features supported:
-<details>
-    <summary><b>Click here for more details</b></summary>
 
 - Mirroring direct download links to Google Drive
 - Mirroring Mega.nz links to Google Drive (In development stage)
