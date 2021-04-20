@@ -1,7 +1,7 @@
 {
     "name": "slam-mirrorbot ",
     "description": "Telegram mirror bot with python",
-    "logo": "https://telegra.ph/file/6507910fd06d18dfaba82.jpg",
+    "logo": "https://telegra.ph/file/019996f816db9ed576cff.jpg",
     "keywords": [
       "bot",
       "telegram",
@@ -105,7 +105,7 @@
       },
       "STOP_DUPLICATE_MIRROR": {
         "description": "If this field is set to True, bot will check file in drive, if it is present in drive, downloading will be stopped.",
-        "value" : true,
+        "value" : "true",
         "required": false
       },
       "SHORTENER": {
