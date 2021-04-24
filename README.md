@@ -15,6 +15,13 @@ to know how to get them click on the  #[ link ](https://github.com/spe4641/test-
 after this click on the below button 👇👇👇👇
 <p><a href="https://heroku.com/deploy"> <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku" /></a></p>
 
+This the structure of Bot
+1) 👇👇👇👇👇
+<img src="https://telegra.ph/file/a55cd673bee2b8e23782c.jpg" alt="screenshot"/>
+
+2) 👇👇👇👇👇
+<img src="https://telegra.ph/file/466ea5903bbfc32158634.jpg" alt="screenshot"/>
+
 ## Features supported:
 
 - Mirroring direct download links to Google Drive
