@@ -23,7 +23,7 @@ after this click on the below button 👇👇👇👇
 
 # 2) 👇👇👇👇👇
 
-[<img src="https://telegra.ph/file/466ea5903bbfc32158634.jpg" alt="screenshot"/>](https://t.me/AT_BOTS)
+[<img src="https://telegra.ph/file/1f1f93c4d55d7f6c33fd9.jpg" alt="screenshot"/>](https://t.me/AT_BOTS)
 
 
 # 3) 👇👇👇👇👇
