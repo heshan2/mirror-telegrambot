@@ -516,34 +516,34 @@ class GoogleDriveHelper:
                                 'https://{}/api?api={}&url={}&format=text'.format(SHORTENER, SHORTENER_API, furl)).text
                             msg += f"<b><a href={sfurl}>🌠 𝗚-𝗗𝗥𝗜𝗩𝗘 𝗟𝗜𝗡𝗞 🌠</a></b>"
                         else:
-                            msg += f"<b><a href={furl} 𝗚-𝗗𝗥𝗜𝗩𝗘 𝗟𝗜𝗡𝗞 🌍</a></b>"
+                            msg += f"<b><a href={furl}>🌠 𝗚-𝗗𝗥𝗜𝗩𝗘 𝗟𝗜𝗡𝗞 🌠</a></b>"
                         if INDEX_URL is not None:
                             url = requests.utils.requote_uri(f'{INDEX_URL}/{file.get("name")}/')
                             if SHORTENER is not None and SHORTENER_API is not None:
                                 siurl = requests.get(
                                     'https://{}/api?api={}&url={}&format=text'.format(SHORTENER, SHORTENER_API,
                                                                                       url)).text
-                                msg += f' <b>| <a href="{siurl}">🔒 𝗜𝗡𝗗𝗘𝗫 𝗟𝗜𝗡𝗞 🔒</a></b>'
+                                msg += f' <b>| <a href="{siurl}">☄️ 𝗜𝗡𝗗𝗘𝗫 𝗟𝗜𝗡𝗞 ☄️</a></b>'
                             else:
-                                msg += f' <b>| <a href="{url}">🔒 𝗜𝗡𝗗𝗘𝗫 𝗟𝗜𝗡𝗞 🔒</a></b>'
+                                msg += f' <b>| <a href="{url}">☄️ 𝗜𝗡𝗗𝗘𝗫 𝗟𝗜𝗡𝗞 ☄️</a></b>'
                     else:
                         furl = f"https://drive.google.com/uc?id={file.get('id')}&export=download"
                         msg += f"⁍<code>{file.get('name')}<br>({get_readable_file_size(int(file.get('size')))})📄</code><br>"
                         if SHORTENER is not None and SHORTENER_API is not None:
                             sfurl = requests.get(
                                 'https://{}/api?api={}&url={}&format=text'.format(SHORTENER, SHORTENER_API, furl)).text
-                            msg += f"<b><a href={sfurl}>🌍 𝗚-𝗗𝗥𝗜𝗩𝗘 𝗟𝗜𝗡𝗞 🌍</a></b>"
+                            msg += f"<b><a href={sfurl}>🌠 𝗚-𝗗𝗥𝗜𝗩𝗘 𝗟𝗜𝗡𝗞 🌠</a></b>"
                         else:
-                            msg += f"<b><a href={furl}>🌍 𝗚-𝗗𝗥𝗜𝗩𝗘 𝗟𝗜𝗡𝗞 🌍</a></b>"
+                            msg += f"<b><a href={furl}>🌠 𝗚-𝗗𝗥𝗜𝗩𝗘 𝗟𝗜𝗡𝗞 🌠</a></b>"
                         if INDEX_URL is not None:
                             url = requests.utils.requote_uri(f'{INDEX_URL}/{file.get("name")}')
                             if SHORTENER is not None and SHORTENER_API is not None:
                                 siurl = requests.get(
                                     'https://{}/api?api={}&url={}&format=text'.format(SHORTENER, SHORTENER_API,
                                                                                       url)).text
-                                msg += f' <b>| <a href="{siurl}">🔒 𝗜𝗡𝗗𝗘𝗫 𝗟𝗜𝗡𝗞 🔒</a></b>'
+                                msg += f' <b>| <a href="{siurl}">☄️ 𝗜𝗡𝗗𝗘𝗫 𝗟𝗜𝗡𝗞 ☄️</a></b>'
                             else:
-                                msg += f' <b>| <a href="{url}">🔒 𝗜𝗡𝗗𝗘𝗫 𝗟𝗜𝗡𝗞 🔒</a></b>'
+                                msg += f' <b>| <a href="{url}">☄️ 𝗜𝗡𝗗𝗘𝗫 𝗟𝗜𝗡𝗞 ☄️</a></b>'
                     msg += '<br><br>'
                     content_count += 1
                     if content_count == TELEGRAPHLIMIT:
