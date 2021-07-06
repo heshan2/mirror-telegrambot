@@ -161,7 +161,6 @@ Three buttons are already added of Drive Link, Index Link, and View Link, you ca
 - Search for Drive and enable it if it is disabled
 - Finally, run the script to generate **token.pickle** file for Google Drive:
 ```
-pip install google-api-python-client google-auth-httplib2 google-auth-oauthlib
 python3 generate_drive_token.py
 ```
 
@@ -193,6 +192,9 @@ Many thanks to [AutoRClone](https://github.com/xyou365/AutoRclone) for the scrip
 **NOTE**: Using service accounts is only recommended while uploading to a team drive.
 
 ## Generate service accounts. [What is service account](https://cloud.google.com/iam/docs/service-accounts)
+
+
+first enable IAM API from cloud console by Visiting [Google API page](https://console.developers.google.com/apis/library)
 
 Let us create only the service accounts that we need. 
 **Warning**: abuse of this feature is not the aim of this project and we do **NOT** recommend that you make a lot of projects, just one project and 100 sa allow you plenty of use, its also possible that over abuse might get your projects banned by google. 
