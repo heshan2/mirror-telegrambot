@@ -127,7 +127,7 @@
       },
       "STOP_DUPLICATE_MEGA": {
         "description": "If this field is set to True, bot will check file in Drive, if it is present in Drive, downloading Mega will be stopped.",
-        "value": "True
+        "value": "True",
         "required": false
       },
       "STOP_DUPLICATE_CLONE": {
