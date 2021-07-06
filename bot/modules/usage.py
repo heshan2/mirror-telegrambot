@@ -8,10 +8,9 @@ from bot.helper.telegram_helper.bot_commands import BotCommands
 from bot.helper.telegram_helper.filters import CustomFilters
 from bot.helper.telegram_helper.message_utils import sendMessage
 from telegram import update
-from telegram.ext import run_async, CommandHandler
+from telegram.ext import CommandHandler
 
 
-@run_async
 def dyno_usage(update, context):
     heroku_api = "https://api.heroku.com"
     if HEROKU_API_KEY is not None and HEROKU_APP_NAME is not None:
@@ -19,7 +18,7 @@ def dyno_usage(update, context):
         app = Heroku.app(HEROKU_APP_NAME)
     else:
         sendMessage(
-            "Please insert your Heroku App Name and API Key in Vars",
+            "Please insert your HEROKU_APP_NAME and HEROKU_API_KEY in Vars",
             context.bot,
             update
         )
@@ -47,7 +46,8 @@ def dyno_usage(update, context):
             minutes_remain = quota_remain / 60
             hours = math.floor(minutes_remain / 60)
             minutes = math.floor(minutes_remain % 60)
-            
+            day = math.floor(hours / 24)
+
             """App Quota."""
             Apps = result["apps"]
             for apps in Apps:
@@ -63,10 +63,12 @@ def dyno_usage(update, context):
             AppMinutes = math.floor(AppQuotaUsed % 60)
             
             sendMessage(
-                f"<b>Dyno Usage for</b> <code>{app.name}</code> :\n"
+                f"<b>Dyno Usage for</b> <code>{app.name}</code>:\n"
                 f"• <code>{AppHours}</code> <b>Hours and</b> <code>{AppMinutes}</code> <b>Minutes - {AppPercent}%</b>\n\n"
-                "<b>Dyno Remaining this month :</b>\n"
-                f"• <code>{hours}</code> <b>Hours and</b> <code>{minutes}</code> <b>Minutes - {quota_percent}%</b>",
+                "<b>Dyno Remaining this month:</b>\n"
+                f"• <code>{hours}</code> <b>Hours and</b> <code>{minutes}</code> <b>Minutes - {quota_percent}%</b>\n\n"
+                "<b>Estimated Dyno Expired:</b>\n"
+                f"• <code>{day}</code> <b>Days</b>",
                 context.bot,
                 update
             )
@@ -74,6 +76,6 @@ def dyno_usage(update, context):
 
 
 dyno_usage_handler = CommandHandler(command=BotCommands.UsageCommand, callback=dyno_usage,
-                                    filters=CustomFilters.owner_filter)
+                                    filters=CustomFilters.owner_filter | CustomFilters.sudo_user, run_async=True)
                                     
 dispatcher.add_handler(dyno_usage_handler)
