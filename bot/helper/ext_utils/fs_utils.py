@@ -55,7 +55,7 @@ def tar(org_path):
     path = pathlib.PurePath(org_path)
     LOGGER.info(f'Tar: orig_path: {org_path}, tar_path: {tar_path}')
     tar = tarfile.open(tar_path, "w")
-    tar.add(org_path, arcname=path.name)
+    tar.add(org_path, arcname=os.path.basename(org_path))
     tar.close()
     return tar_path
 
@@ -69,6 +69,8 @@ def get_base_name(orig_path: str):
         return orig_path.replace(".bz2", "")
     elif orig_path.endswith(".gz"):
         return orig_path.replace(".gz", "")
+    elif orig_path.endswith(".tar.xz"):
+        return orig_path.replace(".tar.xz", "")
     elif orig_path.endswith(".tar"):
         return orig_path.replace(".tar", "")
     elif orig_path.endswith(".tbz2"):
