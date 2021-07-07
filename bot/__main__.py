@@ -45,7 +45,7 @@ def stats(update, context):
             f'<b>☞ CPU:</b> {cpuUsage}%\n' \
             f'<b>☞ RAM:</b> {memory}%\n' \
             f'<b>☞ DISK:</b> {disk}%\n' \
-            f'<b>☞ 𝗣𝗼𝘄𝗲𝗿𝗲𝗱 𝗕𝘆 @AT_BOTS
+            f'<b>☞ 𝗣𝗼𝘄𝗲𝗿𝗲𝗱 𝗕𝘆 @AT_BOTS\n\n' \
     update.effective_message.reply_photo(IMAGE_URL, stats, parse_mode=ParseMode.HTML)
 
 
@@ -55,8 +55,8 @@ This bot can mirror all your links to Google Drive!
 Type /{BotCommands.HelpCommand} to get a list of available commands
 '''
     buttons = button_build.ButtonMaker()
-    buttons.buildbutton("Repo", "https://github.com/breakdowns/slam-mirrorbot")
-    buttons.buildbutton("Support Group", "https://t.me/SlamMirrorSupport")
+    buttons.buildbutton("Repo", "https://github.com/ayushteke/slam_aria_mirror_bot_HEROKU")
+    buttons.buildbutton("Support Group", "https://t.me/AT_BOTs_support")
     reply_markup = InlineKeyboardMarkup(buttons.build_menu(2))
     LOGGER.info('UID: {} - UN: {} - MSG: {}'.format(update.message.chat.id, update.message.chat.username, update.message.text))
     uptime = get_readable_time((time.time() - botStartTime))
