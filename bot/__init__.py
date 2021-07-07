@@ -190,6 +190,12 @@ try:
 except KeyError:
     MEGA_LIMIT = None
 try:
+    TAR_UNZIP_LIMIT = getConfig('TAR_UNZIP_LIMIT')
+    if len(TAR_UNZIP_LIMIT) == 0:
+        TAR_UNZIP_LIMIT = None
+except KeyError:
+    TAR_UNZIP_LIMIT = None
+try:
     BUTTON_FOUR_NAME = getConfig('BUTTON_FOUR_NAME')
     BUTTON_FOUR_URL = getConfig('BUTTON_FOUR_URL')
     if len(BUTTON_FOUR_NAME) == 0 or len(BUTTON_FOUR_URL) == 0:
@@ -218,17 +224,17 @@ try:
     if STOP_DUPLICATE_MIRROR.lower() == 'true':
         STOP_DUPLICATE_MIRROR = True
     else:
-        STOP_DUPLICATE_MIRROR = True
+        STOP_DUPLICATE_MIRROR = False
 except KeyError:
-    STOP_DUPLICATE_MIRROR = True
+    STOP_DUPLICATE_MIRROR = False
 try:
     STOP_DUPLICATE_MEGA = getConfig('STOP_DUPLICATE_MEGA')
     if STOP_DUPLICATE_MEGA.lower() == 'true':
         STOP_DUPLICATE_MEGA = True
     else:
-        STOP_DUPLICATE_MEGA = True
+        STOP_DUPLICATE_MEGA = False
 except KeyError:
-    STOP_DUPLICATE_MEGA = True
+    STOP_DUPLICATE_MEGA = False
 try:
     VIEW_LINK = getConfig('VIEW_LINK')
     if VIEW_LINK.lower() == 'true':
