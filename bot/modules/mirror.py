@@ -3,7 +3,7 @@ from telegram.ext import CommandHandler
 from telegram import InlineKeyboardMarkup
 
 from bot import Interval, INDEX_URL, BUTTON_FOUR_NAME, BUTTON_FOUR_URL, BUTTON_FIVE_NAME, BUTTON_FIVE_URL, BUTTON_SIX_NAME, BUTTON_SIX_URL, BLOCK_MEGA_FOLDER, BLOCK_MEGA_LINKS, VIEW_LINK
-from bot import dispatcher, DOWNLOAD_DIR, DOWNLOAD_STATUS_UPDATE_INTERVAL, download_dict, download_dict_lock, SHORTENER, SHORTENER_API
+from bot import dispatcher, DOWNLOAD_DIR, DOWNLOAD_STATUS_UPDATE_INTERVAL, download_dict, download_dict_lock, SHORTENER, SHORTENER_API, TAR_UNZIP_LIMIT
 from bot.helper.ext_utils import fs_utils, bot_utils
 from bot.helper.ext_utils.bot_utils import setInterval, get_mega_link_type
 from bot.helper.ext_utils.exceptions import DirectDownloadLinkException, NotSupportedExtractionArchive
@@ -148,15 +148,13 @@ class MirrorListener(listeners.MirrorListeners):
 
     def onUploadComplete(self, link: str, size, files, folders, typ):
         with download_dict_lock:
-            msg = f'<b>☞ 📂 File name: </b><code>{download_dict[self.uid].name()}</code>\n<b>Size: </b><code>{size}</code>'
+            msg = f'<b>☞ 📂 Filename: </b><code>{download_dict[self.uid].name()}</code>\n<b>Size: </b><code>{size}</code>'
             if os.path.isdir(f'{DOWNLOAD_DIR}/{self.uid}/{download_dict[self.uid].name()}'):
                 msg += '\n<b>☞ 🌀 Type: </b><code>Folder</code>'
                 msg += f'\n<b>☞ 📦 Size: </b><code>{get_readable_file_size(self.total_bytes)}</code>'
-                msg += f'\n<b>☞ 🗳 𝗣𝗼𝘄𝗲𝗿𝗲𝗱 𝗕𝘆 @AT_BOTS</b>\n\n'
-#                 msg += f'\n<b>☞ SubFolders: </b><code>{folders}</code>'
-#                 msg += f'\n<b>☞ Files: </b><code>{files}</code>'
+                msg += f'\n<b>☞ 🗳 𝗣𝗼𝘄𝗲𝗿𝗲𝗱 𝗕𝘆 @AT_BOTS'
             else:
-                msg += f'\n<b>Type: </b><code>{typ}</code>'
+                msg += f'\n<b>☞ 🌀 Type: </b><code>{typ}</code>'
             buttons = button_build.ButtonMaker()
             if SHORTENER is not None and SHORTENER_API is not None:
                 surl = requests.get(f'https://{SHORTENER}/api?api={SHORTENER_API}&url={link}&format=text').text
@@ -181,11 +179,11 @@ class MirrorListener(listeners.MirrorListeners):
                         siurls = requests.get(f'https://{SHORTENER}/api?api={SHORTENER_API}&url={share_urls}&format=text').text
                         buttons.buildbutton("☄️ Index Link ☄️", siurl)
                         if VIEW_LINK:
-                            buttons.buildbutton("🌠 View Link 🌠", siurls)
+                            buttons.buildbutton("🌐 View Link", siurls)
                     else:
                         buttons.buildbutton("☄️ Index Link ☄️", share_url)
                         if VIEW_LINK:
-                            buttons.buildbutton("🌠 View Link 🌠", share_urls)
+                            buttons.buildbutton("🌐 View Link", share_urls)
             if BUTTON_FOUR_NAME is not None and BUTTON_FOUR_URL is not None:
                 buttons.buildbutton(f"{BUTTON_FOUR_NAME}", f"{BUTTON_FOUR_URL}")
             if BUTTON_FIVE_NAME is not None and BUTTON_FIVE_URL is not None:
@@ -294,19 +292,33 @@ def _mirror(bot, update, isTar=False, extract=False):
             sendMessage(f"{e}", bot, update)
             return
         if "Youtube" in str(e):
-            sendMessage(f"ERROR: {e}", bot, update)
+            sendMessage(f"{e}", bot, update)
             return
 
     listener = MirrorListener(bot, update, pswd, isTar, tag, extract)
 
     if bot_utils.is_gdrive_link(link):
         if not isTar and not extract:
-            sendMessage(f"Use /{BotCommands.CloneCommand} To Copy Google Drive File/Folder", bot, update)
+            sendMessage(f"Use /{BotCommands.CloneCommand} to clone Google Drive file/folder\nUse /{BotCommands.TarMirrorCommand} to make tar of Google Drive folder\nUse /{BotCommands.UnzipMirrorCommand} to extracts archive Google Drive file", bot, update)
             return
         res, size, name = gdriveTools.GoogleDriveHelper().clonehelper(link)
         if res != "":
             sendMessage(res, bot, update)
             return
+        if TAR_UNZIP_LIMIT is not None:
+            LOGGER.info(f'Checking File/Folder Size')
+            limit = TAR_UNZIP_LIMIT
+            limit = limit.split(' ', maxsplit=1)
+            limitint = int(limit[0])
+            msg = f'Failed, Tar/Unzip limit is {TAR_UNZIP_LIMIT}.\nYour File/Folder size is {get_readable_file_size(size)}.'
+            if 'G' in limit[1] or 'g' in limit[1]:
+                if size > limitint * 1024**3:
+                    sendMessage(msg, listener.bot, listener.update)
+                    return
+            elif 'T' in limit[1] or 't' in limit[1]:
+                if size > limitint * 1024**4:
+                    sendMessage(msg, listener.bot, listener.update)
+                    return
         LOGGER.info(f"Download Name : {name}")
         drive = gdriveTools.GoogleDriveHelper(name, listener)
         gid = ''.join(random.SystemRandom().choices(string.ascii_letters + string.digits, k=12))
