@@ -45,7 +45,7 @@ def stats(update, context):
             f'<b>☞ CPU:</b> {cpuUsage}%\n' \
             f'<b>☞ RAM:</b> {memory}%\n' \
             f'<b>☞ DISK:</b> {disk}%\n' \
-            f'<b>☞ 𝗣𝗼𝘄𝗲𝗿𝗲𝗱 𝗕𝘆 @AT_BOTS\n\n' \
+            f'<b>☞ 𝗣𝗼𝘄𝗲𝗿𝗲𝗱 𝗕𝘆</b> @AT_BOTS\n\n'
     update.effective_message.reply_photo(IMAGE_URL, stats, parse_mode=ParseMode.HTML)
 
 
