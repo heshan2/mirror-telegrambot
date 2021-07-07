@@ -152,7 +152,7 @@ class MirrorListener(listeners.MirrorListeners):
             if os.path.isdir(f'{DOWNLOAD_DIR}/{self.uid}/{download_dict[self.uid].name()}'):
                 msg += '\n<b>☞ 🌀 Type: </b><code>Folder</code>'
                 msg += f'\n<b>☞ 📦 Size: </b><code>{get_readable_file_size(self.total_bytes)}</code>'
-                msg += f'\n<b>☞ 🗳 𝗣𝗼𝘄𝗲𝗿𝗲𝗱 𝗕𝘆 @AT_BOTS'
+                msg += f'\n<b>☞ 🗳 𝗣𝗼𝘄𝗲𝗿𝗲𝗱 𝗕𝘆</b> @AT_BOTS'
             else:
                 msg += f'\n<b>☞ 🌀 Type: </b><code>{typ}</code>'
             buttons = button_build.ButtonMaker()
