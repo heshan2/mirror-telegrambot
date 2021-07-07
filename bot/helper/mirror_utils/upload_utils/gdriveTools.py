@@ -355,7 +355,7 @@ class GoogleDriveHelper:
             if meta.get("mimeType") == self.__G_DRIVE_DIR_MIME_TYPE:
                 dir_id = self.create_directory(meta.get('name'), parent_id)
                 self.cloneFolder(meta.get('name'), meta.get('name'), meta.get('id'), dir_id)
-                msg += f'<b>☞ 📂 Filename: </b><code>{meta.get("name")}</code>\n<b>Size: </b><code>{get_readable_file_size(self.transferred_size)}</code>'
+                msg += f'<b>☞ 📂 Filename: </b><code>{meta.get("name")}</code>\n<b>☞ 📦 Size: </b><code>{get_readable_file_size(self.transferred_size)}</code>'
                 msg += f'\n<b>☞ 🌀 Type: </b><code>Folder</code>'
                 msg += f'\n<b>☞ 🗳 𝗣𝗼𝘄𝗲𝗿𝗲𝗱 𝗕𝘆</b> @AT_BOTS'
 #                 msg += f'\n<b>Files: </b><code>{self.total_files}</code>'
