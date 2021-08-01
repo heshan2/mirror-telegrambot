@@ -35,21 +35,22 @@ def stats(update, context):
     cpuUsage = psutil.cpu_percent(interval=0.5)
     memory = psutil.virtual_memory().percent
     disk = psutil.disk_usage('/').percent
-    stats = f'<b>┏━━━━⭕️🅱🅾🆃 🆂🆃🅰🆃🅸🆂🆃🅸🅲🆂⭕️━━━━━┓</b>\n' \
-            f'<b>│                                      │</b>\n' \
-            f'<b>│                                      │</b>\n' \
-            f'<b>├ ➪⏰ Bot Uptime : {currentTime}       │</b>\n' \
-            f'<b>├ ➪💾 Total Disk Space : {total}       │</b>\n' \
-            f'<b>├ ➪📀 Total Used Space : {used}        │</b>\n' \
-            f'<b>├ ➪💿 Total Free Space : {free}        │</b>\n' \
-            f'<b>├ ➪🔼 Total Upload : {sent}            │</b>\n' \
-            f'<b>├ ➪🔽 Total Download : {recv}          │</b>\n' \
-            f'<b>├ ➪🖥️ CPU : {cpuUsage}%                │</b>\n' \
-            f'<b>├ ➪🎮 RAM : {memory}%                  │</b>\n' \
-            f'<b>├ ➪💽 DISK : {disk}%                   │</b>\n' \
-            f'<b>│                                      │</b>\n' \
-            f'<b>│                                      │</b>\n' \
-            f'<b>┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛</b>'
+    stats = f'<b>┏━━━━━━━━━━━🅱🅾🆃━━━━━━━━━━━┓</b>\n' \
+            f'<b>│        🆂🆃🅰🆃🅸🆂🆃🅸🅲🆂      │</b>\n' \
+            f'<b>│                               │</b>\n' \
+            f'<b>│                               │</b>\n' \
+            f'<b>├ ➪⏰ Bot Uptime : {currentTime}│</b>\n' \
+            f'<b>├ ➪💾 Total Disk Space : {total}│</b>\n' \
+            f'<b>├ ➪📀 Total Used Space : {used} │</b>\n' \
+            f'<b>├ ➪💿 Total Free Space : {free} │</b>\n' \
+            f'<b>├ ➪🔼 Total Upload : {sent}     │</b>\n' \
+            f'<b>├ ➪🔽 Total Download : {recv}   │</b>\n' \
+            f'<b>├ ➪🖥️ CPU : {cpuUsage}%         │</b>\n' \
+            f'<b>├ ➪🎮 RAM : {memory}%           │</b>\n' \
+            f'<b>├ ➪💽 DISK : {disk}%            │</b>\n' \
+            f'<b>│                               │</b>\n' \
+            f'<b>│                               │</b>\n' \
+            f'<b>┗━━━━━━━━━━━━━━━━━━━━━━━━━━┛</b>'
     update.effective_message.reply_photo(IMAGE_URL, stats, parse_mode=ParseMode.HTML)
 
 
