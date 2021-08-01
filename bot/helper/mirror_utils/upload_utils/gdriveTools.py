@@ -115,7 +115,7 @@ class GoogleDriveHelper:
                                      resumable=False)
         file_metadata = {
             'name': file_name,
-            'description': 'Uploaded using AT_BOTS',
+            'description': 'Uploaded By A.T.Heshan',
             'mimeType': mime_type,
         }
         if parent_id is not None:
