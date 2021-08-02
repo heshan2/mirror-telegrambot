@@ -35,18 +35,18 @@ def stats(update, context):
     cpuUsage = psutil.cpu_percent(interval=0.5)
     memory = psutil.virtual_memory().percent
     disk = psutil.disk_usage('/').percent
-    stats = f'┏━━━━━━━👹<b><u>𝔹𝕆𝕋 𝕊𝕋𝔸𝕋𝕀𝕊𝕋𝕀ℂ𝕊</u></b>👹\n' \
+    stats = f'┏━━━━👹<b><u>𝔹𝕆𝕋 𝕊𝕋𝔸𝕋𝕀𝕊𝕋𝕀ℂ𝕊</u></b>👹\n' \
             f'┃\n' \
             f'┃\n' \
-            f'┣ ➟⏰<b> Bot Uptime : {currentTime}</b>\n' \
-            f'┣ ➟💾<b> Total Disk Space : {total}</b>\n' \
-            f'┣ ➟📀<b> Total Used Space : {used} </b>\n' \
-            f'┣ ➟💿<b> Total Free Space : {free} </b>\n' \
-            f'┣ ➟🔼<b> Total Upload : {sent}  </b>\n' \
-            f'┣ ➟🔽<b> Total Download : {recv} </b>\n' \
-            f'┣ ➟🖥️<b> CPU : {cpuUsage}% </b>\n' \
-            f'┣ ➟🎮<b> RAM : {memory}% </b>\n' \
-            f'┣ ➟💽<b> DISK : {disk}% </b>\n' \
+            f'┣ ➟⏰<b> Bot Uptime </b>: {currentTime}\n' \
+            f'┣ ➟💾<b> Total Disk Space</b> : {total}\n' \
+            f'┣ ➟📀<b> Total Used Space</b> : {used}\n' \
+            f'┣ ➟💿<b> Total Free Space</b> : {free}\n' \
+            f'┣ ➟🔼<b> Total Upload</b> : {sent}\n' \
+            f'┣ ➟🔽<b> Total Download</b> : {recv}\n' \
+            f'┣ ➟🖥️<b> CPU</b> : {cpuUsage}%\n' \
+            f'┣ ➟🎮<b> RAM</b> : {memory}%\n' \
+            f'┣ ➟💽<b> DISK</b> : {disk}%\n' \
             f'┃\n' \
             f'┖━━━━━━━━━━━━━━'
     update.effective_message.reply_photo(IMAGE_URL, stats, parse_mode=ParseMode.HTML)
