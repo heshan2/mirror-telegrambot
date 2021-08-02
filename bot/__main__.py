@@ -36,7 +36,7 @@ def stats(update, context):
     memory = psutil.virtual_memory().percent
     disk = psutil.disk_usage('/').percent
     stats = f'<b> BOT STATISTICS</b>\n' \
-            f'<b>│</b>\n' \                              │</b>\n' \
+            f'<b>│</b>\n' \
             f'<b>├ ➪⏰ Bot Uptime : {currentTime}</b>\n' \
             f'<b>├ ➪💾 Total Disk Space : {total}</b>\n' \
             f'<b>├ ➪📀 Total Used Space : {used} </b>\n' \
