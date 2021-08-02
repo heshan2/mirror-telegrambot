@@ -1,7 +1,9 @@
 import shutil, psutil
 import signal
 import os
+import colorama
 
+from colorama import Fore, Style
 from pyrogram import idle
 from bot import app
 from sys import executable
@@ -65,7 +67,7 @@ Type /{BotCommands.HelpCommand} to get a list of available commands
     uptime = get_readable_time((time.time() - botStartTime))
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         if update.message.chat.type == "private" :
-            sendMessage(f"ᴴᵉʸ_ᴵ'ᵐ_ᵃˡʳᵉᵃᵈʸ_ˢᵗᵃʳᵗᵉᵈ 🙂\n<b>🅂🄸🄽🄲🄴</b>: <code>{uptime}</code>", context.bot, update)
+            sendMessage(f"Fore.BLUE + "Hello World" 🙂\n<b>🅂🄸🄽🄲🄴</b>: <code>{uptime}</code>", context.bot, update)
         else :
             update.effective_message.reply_photo(IMAGE_URL, start_string, parse_mode=ParseMode.MARKDOWN, reply_markup=reply_markup)
     else :
