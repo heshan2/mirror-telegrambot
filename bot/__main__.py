@@ -48,7 +48,7 @@ def stats(update, context):
             f'┣ ➟<b> RAM</b>               : {memory}%\n' \
             f'┣ ➟<b> DISK</b>              : {disk}%\n' \
             f'┃\n' \
-            f'┖━━━━━
+            f'┖━━━━━'
     update.effective_message.reply_photo(IMAGE_URL, stats, parse_mode=ParseMode.HTML)
 
 
