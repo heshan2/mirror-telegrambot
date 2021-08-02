@@ -38,15 +38,15 @@ def stats(update, context):
     stats = f'┏━👹<b><u>𝔹𝕆𝕋 𝕊𝕋𝔸𝕋𝕀𝕊𝕋𝕀ℂ𝕊</u></b>👹\n' \
             f'┃\n' \
             f'┃\n' \
-            f'┣ ➟<b> Bot Uptime </b>           : {currentTime}\n' \
+            f'┣ ➟<b> Bot Uptime </b>          : {currentTime}\n' \
             f'┣ ➟<b> Total Disk Space</b>  : {total}\n' \
             f'┣ ➟<b> Total Used Space</b> : {used}\n' \
             f'┣ ➟<b> Total Free Space</b>  : {free}\n' \
             f'┣ ➟<b> Total Upload</b>         : {sent}\n' \
             f'┣ ➟<b> Total Download</b>    : {recv}\n' \
             f'┣ ➟<b> CPU</b>                      : {cpuUsage}%\n' \
-            f'┣ ➟<b> RAM</b>                      : {memory}%\n' \
-            f'┣ ➟<b> DISK</b>                    : {disk}%\n' \
+            f'┣ ➟<b> RAM</b>                     : {memory}%\n' \
+            f'┣ ➟<b> DISK</b>                     : {disk}%\n' \
             f'┃\n' \
             f'┖━━━━━'
     update.effective_message.reply_photo(IMAGE_URL, stats, parse_mode=ParseMode.HTML)
