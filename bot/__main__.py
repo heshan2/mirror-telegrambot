@@ -1,9 +1,7 @@
 import shutil, psutil
 import signal
 import os
-import colorama
 
-from colorama import Fore, Style
 from pyrogram import idle
 from bot import app
 from sys import executable
