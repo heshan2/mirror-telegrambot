@@ -35,7 +35,7 @@ def stats(update, context):
     cpuUsage = psutil.cpu_percent(interval=0.5)
     memory = psutil.virtual_memory().percent
     disk = psutil.disk_usage('/').percent
-    stats = f'<b>┏━━━━━━━━━𝔹𝕆𝕋 𝕊𝕋𝔸𝕋𝕀𝕊𝕋𝕀ℂ𝕊</b>\n' \
+    stats = f'<b>┏━✴️𝔹𝕆𝕋 𝕊𝕋𝔸𝕋𝕀𝕊𝕋𝕀ℂ𝕊✴️</b>\n' \
             f'<b>┃</b>\n' \
             f'<b>┃</b>\n' \
             f'<b>┣ ➟⏰ Bot Uptime : {currentTime}</b>\n' \
@@ -48,7 +48,7 @@ def stats(update, context):
             f'<b>┣ ➟🎮 RAM : {memory}% </b>\n' \
             f'<b>┣ ➟💽 DISK : {disk}% </b>\n' \
             f'<b>┃</b>\n' \
-            f'<b>┖━━━━━━━━━━━━━━━━━━━━━</b>'
+            f'<b>┖━━━━━━</b>'
     update.effective_message.reply_photo(IMAGE_URL, stats, parse_mode=ParseMode.HTML)
 
 
