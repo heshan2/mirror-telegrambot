@@ -1,15 +1,14 @@
 {
     "name": "slam-mirrorbot",
     "description": "A Telegram bot for all your mirror needs",
-    "logo": "https://telegra.ph/file/019996f816db9ed576cff.jpg",
     "keywords": [
       "bot",
       "telegram",
       "python"
     ],
-    "repository": "https://github.com/ayushteke/slam_aria_mirror_bot_HEROKU",
-    "website": "https://github.com/ayushteke/slam_aria_mirror_bot_HEROKU",
-    "success_url": "https://t.me/TORRNET_TO_GDRIVE",
+    "repository": "https://github.com/heshan2/mirror-telegrambot",
+    "website": "https://github.com/heshan2/mirror-telegrambot",
+    "success_url": "https://t.me/A_T_Heshan",
     "stack": "container",
     "env": {
       "ENV": {
@@ -76,8 +75,8 @@
         "required": true
       },
       "UPSTREAM_REPO": {
-        "description": "Link for Bot Upstream Repo, If you want default update, Fill https://github.com/ayushteke/slam_aria_mirror_bot_HEROKU",
-        "value": "https://github.com/ayushteke/slam_aria_mirror_bot_HEROKU",
+        "description": "Link for Bot Upstream Repo, If you want default update, Fill https://github.com/heshan2/mirror-telegrambot",
+        "value": "https://github.com/heshan2/mirror-telegrambot",
         "required": true
       },
       "UPSTREAM_BRANCH": {
