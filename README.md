@@ -1,4 +1,4 @@
-# Slam Mirror Bot
+# Telegram Mirror Bot
 This is a telegram bot writen in python for mirroring files on the internet to our beloved Google Drive.
 
 ## Deploying on Heroku
